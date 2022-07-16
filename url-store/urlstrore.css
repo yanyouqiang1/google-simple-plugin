@@ -1,0 +1,25 @@
+.func{
+
+}
+
+.record{
+    vertical-align: bottom;
+}
+
+.rname{
+    height: 50px;
+    padding-top: 20px;
+}
+
+.raddr{
+    height: 50px;
+    padding-top: 20px;
+    /*margin-top: 20px;*/
+}
+
+.rparam{
+    height: 50px;
+    width: 400px;
+    margin: 0px;
+    padding: 0px;
+}
