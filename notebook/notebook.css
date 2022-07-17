@@ -1,0 +1,70 @@
+.containerDiv{
+    width: 900px;
+    margin: auto;
+}
+
+.recordDiv{
+    width: 800px;
+}
+
+.titleDiv{
+    float: left;
+}
+.contentDiv{
+    display: inline;
+    margin-left: 20px;
+}
+.saveDiv{
+    float:right;
+    width: 50px;
+    /*height: 50px;*/
+    margin-top: 10px;
+    vertical-align: center;
+}
+
+.deleteDiv{
+    float:right;
+    width: 50px;
+    /*height: 50px;*/
+    margin-top: 10px;
+    vertical-align: center;
+    padding-left: 10px;
+}
+.savebtn{
+    width: 50px;
+    height: 30px;
+    background-color: blueviolet;
+}
+
+.deleteBtn{
+    width: 50px;
+    height: 30px;
+    background-color: darkred;
+
+}
+
+
+
+.title{
+    width: 200px;
+    height: 50px;
+}
+
+.content{
+    width: 450px;
+    height: 50px;
+}
+
+
+
+
+.newBtnDiv{
+    width: 900px;
+    margin: auto;
+}
+
+.newbtn{
+    width: 100px;
+    float: right;
+    background-color: green;
+}

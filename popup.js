@@ -9,3 +9,6 @@ $("#url-store").click(function (){
 $("#html-str-show").click(function (){
     window.open("html-str-show/html-str-show.html")
 })
+$("#notebook").click(function (){
+    window.open("notebook/notebook.html")
+})
