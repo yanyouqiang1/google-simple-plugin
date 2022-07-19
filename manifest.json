@@ -13,8 +13,6 @@
     "storage"
   ],
   "icons": {
-    "16": "common/icons/16x16.ico",
-    "48": "common/icons/48x48.ico",
-    "128": "common/icons/128x128.ico"
+   "16": "common/icons/yyq.png"
   }
 }
