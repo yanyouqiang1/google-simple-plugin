@@ -12,3 +12,6 @@ $("#html-str-show").click(function (){
 $("#notebook").click(function (){
     window.open("notebook/notebook.html")
 })
+$("#tabs").click(function (){
+    window.open("tabs/tabs.html")
+})

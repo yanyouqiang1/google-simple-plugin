@@ -1,0 +1,57 @@
+.containerDiv{
+    width: 1000px;
+    margin: auto;
+}
+
+.title{
+    font-size: large;
+    color: red;
+    border: brown ;
+    border-style: none none solid none;
+}
+
+.time{
+    margin-left: 20px;
+    font-size: small;
+}
+
+.recordsDiv{
+    width: 1000px;
+    border: #3C769D solid;
+    margin-bottom: 10px;
+}
+
+.urlsDiv{
+    float: left;
+    display: inline;
+}
+
+
+.remarksDiv{
+    margin-left: 30px;
+    margin-right: 30px;
+    display: inline;
+    /*float: left;*/
+}
+
+.operationsDiv{
+    /*display: inline;*/
+}
+
+.urlDeleteBtn{
+    background-color: cadetblue;
+}
+
+
+
+.remark{
+    width: 900px;
+    height: 100px;
+    /*resize: none;*/
+}
+
+
+.operationsDiv ul li{
+    display: inline;
+    margin-right: 10px;
+}
