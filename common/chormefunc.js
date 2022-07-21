@@ -11,6 +11,15 @@ async function getCurrentTabs(){
     tabs =await chrome.tabs.query(query)
     return tabs
 }
+//获取当前窗口下的tabs，除去自己
+async function getCurrentTabsNoActive(){
+    query={
+        windowId: chrome.windows.WINDOW_ID_CURRENT,
+        active:false
+    }
+    tabs =await chrome.tabs.query(query)
+    return tabs
+}
 
 
 function openTabs(urls){

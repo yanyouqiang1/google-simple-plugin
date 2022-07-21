@@ -1,3 +1,19 @@
+.top{
+    width: 1000px;
+    margin: auto;
+}
+.textData{
+    width: 1000px;
+    height: 200px;
+    display: none;
+}
+
+#export{
+    disable: true;
+}
+
+
+
 .containerDiv{
     width: 1000px;
     margin: auto;
