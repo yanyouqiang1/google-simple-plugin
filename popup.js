@@ -11,3 +11,7 @@ $("#notebook").click(function (){
 $("#tabs").click(function (){
     window.open("tabs/tabs.html")
 })
+
+$("#yml").click(function (){
+    window.open("yml/yml.html")
+})

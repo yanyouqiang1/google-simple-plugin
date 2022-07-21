@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON转YAML</title>
+
+    <link rel="stylesheet" href="file/style.css">
+    <link rel="stylesheet" href="file/all.min.css">
+    <link rel="stylesheet" href="file/idea.min.css">
+    <script src="file/clipboard.min.js"></script>
+    <script src="file/highlight.min.js"></script>
+    <script src="file/hm.js"></script>
+    <script src="file/js-yaml.min.js"></script>
+    <script src="file/json.min.js"></script>
+    <script src="file/yaml.min.js"></script>
+    <script src="../common/jquery.js"></script>
+
+</head>
+<body>
+
+<main>
+    <div class="container">
+        <h1>JSON转YAML,YAML转JSON</h1>
+        <div class="flex mt1">
+            <div class="editarea" onpaste="setTimeout(toJson, 1)">
+                <label>YAML</label>
+                <pre id="area_yaml" class="textarea fullHeight fixed-size" contenteditable="true"></pre>
+            </div>
+            <div class="mid-menus">
+                <div>
+                    <button class="button primary" id="toJson">
+                        <span>转JSON >></span>
+                    </button>
+                    <button class="button cpy-btn" id="toYml"><< 转YML</button>
+                    <button class="button" id="cleanup">清空</button>
+                </div>
+            </div>
+            <div class="editarea" onpaste="setTimeout(toYaml, 1)">
+                <label>JSON</label>
+                <pre id="area_json" class="textarea fullHeight fixed-size" contenteditable="true"></pre>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<script src="yml.js"></script>
+
+</html>
