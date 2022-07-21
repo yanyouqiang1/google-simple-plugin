@@ -1,8 +1,17 @@
-//获取所有的标签页
+//获取所有的标签页,多个窗口都会获取
 async function getAllTabs(){
     tabs =await chrome.tabs.query({})
     return tabs
 }
+//获取当前窗口下的tabs
+async function getCurrentTabs(){
+    query={
+        windowId: chrome.windows.WINDOW_ID_CURRENT
+    }
+    tabs =await chrome.tabs.query(query)
+    return tabs
+}
+
 
 function openTabs(urls){
     for (const url of urls) {

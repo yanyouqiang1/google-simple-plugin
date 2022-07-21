@@ -39,7 +39,7 @@ function saveAndRefresh(){
 }
 function recordTabs() {
     //记录上tabs
-    getAllTabs().then(alltabs => {
+    getCurrentTabs().then(alltabs => {
         tabs=[]
         for (const tab of alltabs) {
             data = {
