@@ -1,0 +1,29 @@
+.containerDiv{
+    width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.inputDiv{
+    width: 1000px;
+}
+
+.operationsDiv{
+    width: 1000px;
+}
+
+.showDiv{
+    width: 800px;
+    border: #3C769D solid;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#inputText{
+    width: 800px;
+    height: 200px;
+}
+
+#show{
+    width: 80px;
+}
