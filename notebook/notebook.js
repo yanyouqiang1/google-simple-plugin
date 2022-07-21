@@ -14,11 +14,15 @@ function storage_get(callback) {
     });
 }
 
-function refresh() {
-    window.location.reload()
-}
+
 
 record_datas = []
+
+function refresh() {
+    storage_save(record_datas)
+
+    window.location.reload()
+}
 
 function htmlOfRecord(index, record) {
     htmlTemplate = `<div class="recordDiv">
