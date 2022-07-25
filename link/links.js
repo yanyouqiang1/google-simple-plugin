@@ -17,6 +17,7 @@ function storage_get(callback) {
 /*
 linksData=[
     {
+        id: 12345678
         title: "Baidu",
         url:"www.baidu.com",
         remark:"bbbbbbbbbbbbb",
@@ -24,52 +25,97 @@ linksData=[
     }
 ]
 */
-linksData=[]
+linksData = []
 
-function saveAndRefresh(){
-    storage_save(savedData);
+function saveAndRefresh() {
+    storage_save(linksData);
     refresh()
 }
 
+function rendLink(data) {
+    taghtml = ''
 
-function rendLink(data){
-    taghtml =''
-    for (tag of data.tags){
-        taghtml +=`<li>${tag}</li>`
-    }
-
-    html =`<div class="col-md-12 column">
-      <p>
+    html = `<div class="col-md-12 column">
+      <p class="ptitle">
         <a href=""><span class="ltitle">${data.title}</span><span class="llink">${data.url}</span> </a>
       </p>
-      <p>
-        <textarea class="remark">${data.remark}</textarea>
-        <button class="saveBtn">save</button>
-      </p>
-      <p>
-      <ul>
-        ${taghtml}
-      </ul>
-      </p>
-    </div>`
+      <div class="detail" id="detail_${data.id}">
+              <textarea class="remark" id="remark_${data.id}">${data.remark}</textarea>
+      </div>
+      <p class="tagsDiv">
+            <input type="text" value="${data.tags}" id="tags_${data.id}" class="dataTags"> 
+            <button class="saveBtn" id="saveBtn" index="${data.id}">save</button>
+       </p>
+    </div>
+    `
 
     return html
 }
 
-function renderLinks(datas){
-    html =''
-    for (data of datas){
+function renderLinks(datas) {
+    $("#containerDiv").empty()
+    html = ''
+    for (data of datas) {
         html += rendLink(data)
     }
-    return html
+    $("#containerDiv").append(html)
+
+    registerListener()
 }
 
-function render(){
-    $("#containerDiv").append(renderLinks(linksData))
+function registerListener() {
+    $("button#saveBtn").click(e => {
+        let id = $(e.target).attr('index');
+
+        tags = $(`#tags_${data.id}`).val()
+        tags = tags.split(' ').filter(s => !!s).join(' ') //filter empty
+
+        data = linksData.find(data => data.id == id)
+
+        data.tags = tags
+        data.remark = $(`#remark_${id}`).val()
+
+        storage_save(linksData);
+        searchAndShow()
+
+    })
+
+    $("a#showDetails").click(e=>{
+        let id = $(e.target).attr('index');
+        $(`#detail_${id}`).show()
+    })
+
 }
 
 
-storage_get((data)=>{
-    linksData = data?data:[]
-    render()
+storage_get((data) => {
+    linksData = data ? data : []
+    renderLinks(linksData)
+})
+
+
+dialogInit(data => {
+    linksData.unshift(data)
+    saveAndRefresh()
+})
+
+function searchAndShow(){
+    keyword = $('#search').val().split(' ').filter(s=>!!s).join(' ');
+    if (keyword){
+        result = []
+
+        // let findResult = linksData.find(data=>data.tags.matchAll(keyword));
+        let findResult = linksData.find(data=> similarity2(data.tags,keyword)>0);
+        result.push(findResult)
+        renderLinks(result)
+    }else{
+        renderLinks(linksData)
+    }
+
+}
+
+$('#search').bind('keypress', function (event) {
+    if (event.keyCode == "13") {
+        searchAndShow()
+    }
 })

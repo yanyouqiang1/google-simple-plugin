@@ -16,9 +16,5 @@ $("#yml").click(function (){
     window.open("yml/yml.html")
 })
 $("#links").click(function (){
-    getCurrentTabs().then(tab=>{
-        console.log(tag)
-    })
-
-    // window.open("link/links.html")
+    window.open("link/links.html")
 })

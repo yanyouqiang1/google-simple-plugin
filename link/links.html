@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>链接管理</title>
-  <link rel="stylesheet" href="../common/css/bootstrap.min.css">
-  <link rel="stylesheet" href="links.css">
-  <script src="../common/jquery.js"></script>
-  <script src="../common/chormefunc.js"></script>
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="links.css">
+    <script src="../common/jquery.js"></script>
+    <script src="../common/chormefunc.js"></script>
+    <script src="../common/util.js"></script>
+    <script src="../common/similarity.js"></script>
 </head>
 <body>
-<div class="container">
-  <div class="row clearfix">
-    <div class="col-md-12 column">
-      <div class="jumbotron">
-        <h1>
-          你好,Urls
-        </h1>
-        <form class="form-inline" role="form">
-          <div class="form-group">
-            <label class="sr-only" for="name">名称</label>
-            <input type="text" class="form-control" id="name" placeholder="begin">
-          </div>
-          <button type="submit" class="btn btn-primary btn-large">搜索</button>
-        </form>
-      </div>
+<div class="dialogNew">
+    select a link
+    <div class="dialogLink" id="dialogLink">
     </div>
-  </div>
-  <div class="row clearfix" id="containerDiv">
+    <div>
+        tags: <input type="text" class="inputTags" id="inputTags"> use space to split
     </div>
-
-  </div>
+    <div class="dialogSub">
+        <button id="addLinkBtn">submit</button>
+    </div>
 </div>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="jumbotron">
+                <h1>
+                    你好,Urls <button class="btn btn-primary btn-large" id="recordBtn">recordOne</button>
+                </h1>
+                    <input type="text" class="form-control" id="search" placeholder="begin">
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix" id="containerDiv">
+    </div>
 
+</div>
 <!--<div class="containerDiv">-->
 <!--&lt;!&ndash;  <div>-->
 <!--    <img class="pandaImg" src="panda.png">-->
@@ -55,5 +60,6 @@
 <!--  </div>-->
 <!--</div>-->
 </body>
+<script src="dialog.js"></script>
 <script src="links.js"></script>
 </html>
