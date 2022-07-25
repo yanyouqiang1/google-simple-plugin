@@ -1,0 +1,27 @@
+.ltitle{
+    font-size: larger;
+}
+
+.llink{
+    font-size: small;
+    color: #4e555b;
+}
+.remark{
+    width: 90%;
+    height: 100px;
+    resize: vertical;
+}
+
+.saveBtn{
+
+}
+
+ul{
+    text-align: left;
+}
+ul li{
+    display: inline;
+    background: #6c757d;
+    margin-right: 10px;
+    color: white;
+}
