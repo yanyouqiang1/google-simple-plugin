@@ -100,13 +100,13 @@ dialogInit(data => {
 })
 
 function searchAndShow(){
-    keyword = $('#search').val().split(' ').filter(s=>!!s).join(' ');
+    keyword = $('#search').val().trim();
     if (keyword){
         result = []
 
         // let findResult = linksData.find(data=>data.tags.matchAll(keyword));
-        let findResult = linksData.find(data=> similarity2(data.tags,keyword)>0);
-        result.push(findResult)
+        let findResult = linksData.filter(data=> similarity2(data.tags,keyword)>0);
+        result= result.concat(findResult)
         renderLinks(result)
     }else{
         renderLinks(linksData)
