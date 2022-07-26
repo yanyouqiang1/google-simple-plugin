@@ -117,7 +117,7 @@ function registerListener() {
 
 storage_get((data) => {
     linksData = data ? data : []
-    renderLinks(linksData)
+    renderLinks(linksData.slice(0,10))
 })
 
 
@@ -132,8 +132,22 @@ function searchAndShow(){
         result = []
 
         // let findResult = linksData.find(data=>data.tags.matchAll(keyword));
-        let findResult = linksData.filter(data=> similarity2(data.tags,keyword)>0);
-        result= result.concat(findResult)
+        // let findResult = linksData.filter(data=> similarity2(data.tags,keyword)>0.3);
+        result = linksData.map(data=>{
+            val = similarity2(data.tags,keyword)
+            if (val>0){
+                return {
+                    similar: val,
+                    data: data
+                }
+            }
+        }).filter(a=>a)
+
+        result.sort((a,b)=>b.similar-a.similar)
+
+        result = result.map(data=>data.data)
+
+        // result= result.concat(findResult)
         renderLinks(result)
     }else{
         renderLinks(linksData)
