@@ -46,6 +46,7 @@ function rendLink(data) {
       </div>
       <p class="tagsDiv">
             <input type="text" value="${data.tags}" id="tags_${data.id}" class="dataTags"> 
+            <button class="deleteBtn" id="deleteBtn" index="${data.id}">delete</button>
             <button class="saveBtn" id="saveBtn" index="${data.id}">save</button>
        </p>
     </div>
@@ -80,6 +81,22 @@ function registerListener() {
         storage_save(linksData);
         searchAndShow()
 
+    })
+
+    $("button#deleteBtn").click(e => {
+        if (!confirm("确认删除吗？")){
+            return;
+        }
+        let id = $(e.target).attr('index');
+        //delete
+        linksData.forEach(function(item, index, arr) {
+            if(item.id==id){
+                arr.splice(index, 1);
+            }
+        })
+
+        storage_save(linksData);
+        searchAndShow()
     })
 
     // $("a#showDetails").click(e=>{

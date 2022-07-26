@@ -62,13 +62,18 @@
     resize: vertical;
 }
 .dataTags{
-    width: 90%;
+    width: 85%;
     font-size: small;
     color: #4e555b;
     border-style: none none solid none;
 }
 
 .saveBtn{
+    font-size: small;
+    background-color: green;
+    color: white;
+}
+.deleteBtn{
     font-size: small;
 }
 
