@@ -37,9 +37,11 @@ function rendLink(data) {
 
     html = `<div class="col-md-12 column">
       <p class="ptitle">
-        <a href=""><span class="ltitle">${data.title}</span><span class="llink">${data.url}</span> </a>
+        <a href="#"><span class="ltitle" id="ltitle" index="${data.id}">${data.title}</span></a>
+        <a href="${data.url}"><span class="llink">${data.url}</span> </a>
       </p>
       <div class="detail" id="detail_${data.id}">
+               <button class="putaway" id="putaway" index="${data.id}">收起</button><br>
               <textarea class="remark" id="remark_${data.id}">${data.remark}</textarea>
       </div>
       <p class="tagsDiv">
@@ -80,9 +82,17 @@ function registerListener() {
 
     })
 
-    $("a#showDetails").click(e=>{
+    // $("a#showDetails").click(e=>{
+    //     let id = $(e.target).attr('index');
+    //     $(`#detail_${id}`).show()
+    // })
+    $("span#ltitle").click(e=>{
         let id = $(e.target).attr('index');
         $(`#detail_${id}`).show()
+    })
+    $("button#putaway").click(e=>{
+        let id = $(e.target).attr('index');
+        $(`#detail_${id}`).hide()
     })
 
 }
@@ -119,3 +129,5 @@ $('#search').bind('keypress', function (event) {
         searchAndShow()
     }
 })
+
+$('#search').focus()

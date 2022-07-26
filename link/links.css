@@ -57,11 +57,13 @@
 }
 .dataTags{
     width: 90%;
-    border: #005cbf;
+    font-size: small;
+    color: #4e555b;
+    border-style: none none solid none;
 }
 
 .saveBtn{
-
+    font-size: small;
 }
 
 ul{
@@ -81,6 +83,12 @@ ul li{
 
 .tagsDiv{
     margin-left: 50px;
+}
+.putaway{
+    font-size: small;
+}
+.detail{
+    display: none;
 }
 
 

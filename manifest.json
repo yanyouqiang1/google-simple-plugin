@@ -15,6 +15,9 @@
   ],
   "icons": {
    "16": "common/icons/yyq.png"
+  },
+  "chrome_url_overrides" : {
+    "newtab": "link/links.html"
   }
 //  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
