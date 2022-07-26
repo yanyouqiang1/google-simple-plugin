@@ -5,7 +5,7 @@ function dialogInit(callback){
             selectIndex = $("input[name='linkIndex']:checked").val();
             tab = tabs[selectIndex]
 
-            tags = $("#inputTags").val().trim();
+            tags = $("#inputTags").val().trim().toUpperCase();
             data ={
                 id : generateMixed(8),
                 title: tab.title,

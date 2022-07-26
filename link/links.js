@@ -69,7 +69,7 @@ function registerListener() {
     $("button#saveBtn").click(e => {
         let id = $(e.target).attr('index');
 
-        tags = $(`#tags_${data.id}`).val()
+        tags = $(`#tags_${id}`).val()
         tags = tags.split(' ').filter(s => !!s).join(' ') //filter empty
 
         data = linksData.find(data => data.id == id)
@@ -110,7 +110,7 @@ dialogInit(data => {
 })
 
 function searchAndShow(){
-    keyword = $('#search').val().trim();
+    keyword = $('#search').val().trim().toUpperCase();;
     if (keyword){
         result = []
 
