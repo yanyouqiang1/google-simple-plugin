@@ -18,3 +18,6 @@ $("#yml").click(function (){
 $("#links").click(function (){
     window.open("link/links.html")
 })
+$("#react").click(function (){
+    window.open("react/react.html")
+})
